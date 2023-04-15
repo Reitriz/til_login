@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIL</title>
+    <style>
+        @charset "UTF-8";
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: system-ui, sans-serif;
+        }
+        body{
+            height: 100vh;
+            background-image: url('imagens/selva.png');
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            height: 455px;
+            width: 455px;
+            background-color: rgba(0, 0, 0, 0.199);
+            color: white;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+        h1{
+             padding: 45px;
+             font-size: 3em;
+             transition: .3s;
+        }
+        form{
+            position: relative;
+            width: 355px;
+        }
+        input{
+            font-weight: 500;
+            display: block;
+            height: 25px;
+            width: 100%;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid black;
+            margin-top: 20px;
+        }
+        label{
+            font-weight: 500;
+            position: absolute;
+            transform: translate(0px, -25px);
+            transition: .3s;
+
+        }
+        input#iemail:focus ~ #lemail,
+        input#isenha:focus ~ #lsenha,
+        input#iemail:valid ~ #lemail,
+        input#isenha:valid ~ #lsenha{
+            transform: translateY(-45px)
+        }
+        p{
+            font-weight: 500;
+            text-align: center;
+            padding: 20px;
+        }
+        a{
+            color: #ffffff;
+            text-decoration: none;
+            transition: .4s;
+        }
+        a:hover{
+            text-shadow: 0px 0px 10px #01f701;
+        }
+        button{
+            color: #fff;
+            display: block;
+            margin: auto;
+            height: 35px;
+            width: 100%;
+            border: 1px solid rgba(0, 0, 0, 0.397);
+            border-radius: 20px;
+            background-color: transparent;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: 500;
+            transition: .7s;
+            padding-bottom: 5px;
+        }
+        button:hover{
+            background-color: #09f70167;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>
+            Login
+        </h1>
+        <form action="#" method="post" autocomplete="on">
+            <input type="email" name="nemail" id="iemail" required autocomplete="email">
+            <label for="iemail" id="lemail">Email</label>
+            <input type="password" name="nsenha" id="isenha" required minlength="8" maxlength="30" autocomplete="current-password">
+            <label for="isenha" id="lsenha">Senha</label>
+            <p>Esqueceu a senha ? <a href="#">Redefinir senha</a></p>
+            <p>Não tem cadastro ? <a href="#">Registre-se</a></p>
+            <button>Entrar</button>
+        </form>
+    </main>
+</body>
+</html>
